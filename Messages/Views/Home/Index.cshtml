@@ -1,8 +1,15 @@
-﻿@{
+﻿@model Message
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form  method="post">
+    <div class="d-flex align-items-center justify-content-center" style="height: 50vh;">
+        <div>
+            <label class="mb-2">Message Text</label>
+            <input asp-for="Text" class="form-control mb-3" style="width: 300px;" />
+            <button type="submit" class="btn btn-primary" style="width:100px;">Create</button>
+        </div>
+    </div>
+</form>
