@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Messages.DataAccess\Messages.DataAccess.csproj" />
+    <ProjectReference Include="..\Messages.Models\Messages.Models.csproj" />
+    <ProjectReference Include="..\Messages.Utility\Messages.Utility.csproj" />
+  </ItemGroup>
+
+</Project>

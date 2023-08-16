@@ -1,15 +1,39 @@
-﻿@model Message
+﻿@using Messages.Models.ViewModels;
+@model MessagesViewModel
 
-@{
-    ViewData["Title"] = "Home Page";
-}
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <h2>All messages</h2>
+    <a class="btn btn-primary" asp-action="Create">Create Message</a>
+</div>
 
-<form  method="post">
-    <div class="d-flex align-items-center justify-content-center" style="height: 50vh;">
-        <div>
-            <label class="mb-2">Message Text</label>
-            <input asp-for="Text" class="form-control mb-3" style="width: 300px;" />
-            <button type="submit" class="btn btn-primary" style="width:100px;">Create</button>
-        </div>
-    </div>
-</form>
+<table class="table">
+    <tr class="table-primary">
+        <th>User Id</th>
+        <th style="width:300px;">Text</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var message in Model.AllMessages)
+    {
+        <tr class="table-light">
+            <td>@message.UserId</td>
+            <td class="text-break">@message.Text</td>
+            <td>@message.CreatedAt</td>
+        </tr>
+    }
+</table>
+
+<h2 class="mb-3">User messages</h2>
+
+<table class="table">
+    <tr class="table-primary">
+        <th style="width:300px;">Text</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var message in Model.UserMessages)
+    {
+        <tr class="table-light">
+            <td class="text-break">@message.Text</td>
+            <td>@message.CreatedAt</td>
+        </tr>
+    }
+</table>
